@@ -27,8 +27,8 @@ public class Admin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
         jPasswordField1 = new javax.swing.JPasswordField();
+        jTextField1 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -38,13 +38,13 @@ public class Admin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPasswordField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 710, 250, 30));
+
         jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 620, 250, 30));
         jTextField1.getAccessibleContext().setAccessibleName("");
         jTextField1.getAccessibleContext().setAccessibleDescription("");
-
-        jPasswordField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        getContentPane().add(jPasswordField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 710, 250, 30));
 
         jLabel5.setFont(new java.awt.Font("Gilroy ExtraBold", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
