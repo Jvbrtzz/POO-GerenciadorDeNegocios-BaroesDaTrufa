@@ -11,7 +11,7 @@ package Modelos;
  */
 public class Servico {
     private int id;
-    private string descricao;
+    private String descricao;
     private float valor;
 
     public Servico(int id, String descricao, float valor) {
@@ -32,7 +32,7 @@ public class Servico {
         return valor;
     }
 
-    public float setValor(float valor){
+    public void setValor(float valor){
         this.valor = valor;
     }
 }
