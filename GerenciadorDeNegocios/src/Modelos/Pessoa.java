@@ -11,7 +11,6 @@ package Modelos;
  */
 public abstract class Pessoa {
     private String nome;
-    private String login;
     private String senha;
 
     public String getNome() {
@@ -21,15 +20,6 @@ public abstract class Pessoa {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
     public String getSenha() {
         return senha;
     }
@@ -38,9 +28,9 @@ public abstract class Pessoa {
         this.senha = senha;
     }
 
-    public Pessoa(String nome, String login, String senha) {
+    public Pessoa(String nome, String senha) {
         this.nome = nome;
-        this.login = login;
+       
         this.senha = senha;
     }
     

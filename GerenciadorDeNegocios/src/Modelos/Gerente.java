@@ -10,8 +10,9 @@ package Modelos;
  * @author jvbor
  */
 public class Gerente extends Pessoa{
-    public Gerente(String nome, String login, String senha) {
-        super(nome, login, senha);
+
+    public Gerente(String nome, String senha) {
+        super(nome, senha);
     }
     
 }
