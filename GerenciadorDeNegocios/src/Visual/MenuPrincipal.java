@@ -10,12 +10,14 @@ package Visual;
  * @author jonat
  */
 public class MenuPrincipal extends javax.swing.JFrame {
-
+     double cont;
+     Recibo recibo = new Recibo();
     /**
      * Creates new form MenuPrincipal
      */
     public MenuPrincipal() {
         initComponents();
+       
     }
 
     /**
@@ -42,14 +44,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        jFerramentas = new javax.swing.JMenu();
+        jFerramentaFinalizar = new javax.swing.JMenuItem();
+        jFerramentasAtualizar = new javax.swing.JMenuItem();
+        JFerramentasSair = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jCheckBox5.setFont(new java.awt.Font("Lobster 1.4", 0, 20)); // NOI18N
-        jCheckBox5.setSelected(true);
         jCheckBox5.setText("Carne Assada com Batata");
         jCheckBox5.setToolTipText("");
         jCheckBox5.addActionListener(new java.awt.event.ActionListener() {
@@ -57,7 +60,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 jCheckBox5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 430, 240, -1));
+        getContentPane().add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 430, 260, -1));
 
         jCheckBox4.setFont(new java.awt.Font("Lobster 1.4", 0, 20)); // NOI18N
         jCheckBox4.setText("Bife com batata Fritas");
@@ -66,7 +69,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 jCheckBox4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, 210, -1));
+        getContentPane().add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 360, 230, -1));
 
         jCheckBox3.setFont(new java.awt.Font("Lobster 1.4", 0, 20)); // NOI18N
         jCheckBox3.setText("Strogonoff de Camarão");
@@ -75,17 +78,16 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 jCheckBox3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, 210, -1));
+        getContentPane().add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, 240, -1));
 
         jCheckBox2.setFont(new java.awt.Font("Lobster 1.4", 0, 20)); // NOI18N
-        jCheckBox2.setSelected(true);
         jCheckBox2.setText("Strogonoff de Frango");
         jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBox2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 190, -1));
+        getContentPane().add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 230, -1));
 
         jCheckBox1.setFont(new java.awt.Font("Lobster 1.4", 0, 20)); // NOI18N
         jCheckBox1.setText("Strogonoff de Carne ");
@@ -95,11 +97,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 jCheckBox1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 190, -1));
+        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, 240, -1));
 
         jLabel9.setFont(new java.awt.Font("Lobster 1.4", 0, 20)); // NOI18N
         jLabel9.setText("R$25,00");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 360, 100, 40));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 360, 100, 40));
 
         jLabel8.setFont(new java.awt.Font("Lobster 1.4", 0, 20)); // NOI18N
         jLabel8.setText("R$25,00");
@@ -107,18 +109,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Lobster 1.4", 0, 20)); // NOI18N
         jLabel7.setText("R$22,00");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 220, 100, 40));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 220, 100, 40));
 
         jLabel6.setFont(new java.awt.Font("Lobster 1.4", 0, 20)); // NOI18N
         jLabel6.setText("R$30,00");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 290, 100, 40));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, 100, 40));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visual/imagens/pratoStrogonoffinal.png"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 120, 330, 190));
 
         jLabel4.setFont(new java.awt.Font("Lobster 1.4", 0, 20)); // NOI18N
         jLabel4.setText("R$25,00");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 100, 40));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, 100, 40));
 
         jLabel3.setFont(new java.awt.Font("Garbata Trial Black", 0, 48)); // NOI18N
         jLabel3.setText("Bebidas");
@@ -131,11 +133,33 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visual/imagens/fundoMP-final.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1920, 1020));
 
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
+        jFerramentas.setText("Ferramentas");
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        jFerramentaFinalizar.setText("Finalizar");
+        jFerramentaFinalizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFerramentaFinalizarActionPerformed(evt);
+            }
+        });
+        jFerramentas.add(jFerramentaFinalizar);
+
+        jFerramentasAtualizar.setText("Atualizar");
+        jFerramentasAtualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFerramentasAtualizarActionPerformed(evt);
+            }
+        });
+        jFerramentas.add(jFerramentasAtualizar);
+
+        JFerramentasSair.setText("Sair");
+        JFerramentasSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JFerramentasSairActionPerformed(evt);
+            }
+        });
+        jFerramentas.add(JFerramentasSair);
+
+        jMenuBar1.add(jFerramentas);
 
         setJMenuBar(jMenuBar1);
 
@@ -143,24 +167,64 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
+       if (jCheckBox1.isSelected()) {
+             cont = cont += 25.00;
+        } else {
+             cont = 0;
+        }
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
-        // TODO add your handling code here:
+         if (jCheckBox2.isSelected()) {
+             cont = cont += 25.00;
+        } else {
+             cont = 0;
+        }
     }//GEN-LAST:event_jCheckBox2ActionPerformed
 
     private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
-        // TODO add your handling code here:
+         if (jCheckBox3.isSelected()) {
+             cont = cont += 25.00;
+        } else {
+            cont = 0;
+        }
     }//GEN-LAST:event_jCheckBox3ActionPerformed
 
     private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
-        // TODO add your handling code here:
+         if (jCheckBox4.isSelected()) {
+             cont = cont += 25.00;
+        } else {
+             cont = 0;
+        }
     }//GEN-LAST:event_jCheckBox4ActionPerformed
 
     private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
-        // TODO add your handling code here:
+         if (jCheckBox5.isSelected()) {
+             cont = cont += 25.00;
+        } else {
+             cont = 0;
+        }
     }//GEN-LAST:event_jCheckBox5ActionPerformed
+
+    private void jFerramentaFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFerramentaFinalizarActionPerformed
+        System.out.println(cont);
+        recibo.setVisible(true);
+        
+              
+    }//GEN-LAST:event_jFerramentaFinalizarActionPerformed
+
+    private void jFerramentasAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFerramentasAtualizarActionPerformed
+        jCheckBox1.setSelected(false);
+        jCheckBox2.setSelected(false);
+        jCheckBox3.setSelected(false);
+        jCheckBox4.setSelected(false);
+        jCheckBox5.setSelected(false);
+        cont = 0;
+    }//GEN-LAST:event_jFerramentasAtualizarActionPerformed
+
+    private void JFerramentasSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JFerramentasSairActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_JFerramentasSairActionPerformed
 
     /**
      * @param args the command line arguments
@@ -198,11 +262,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem JFerramentasSair;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JCheckBox jCheckBox4;
     private javax.swing.JCheckBox jCheckBox5;
+    private javax.swing.JMenuItem jFerramentaFinalizar;
+    private javax.swing.JMenu jFerramentas;
+    private javax.swing.JMenuItem jFerramentasAtualizar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -212,8 +280,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }
