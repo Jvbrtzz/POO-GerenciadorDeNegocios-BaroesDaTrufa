@@ -140,7 +140,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visual/imagens/fundoMP-final.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 1920, 1020));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 1920, 1020));
 
         jFerramentas.setText("Ferramentas");
 
