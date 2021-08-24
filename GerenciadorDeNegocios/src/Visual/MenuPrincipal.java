@@ -111,13 +111,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visual/imagens/icons/strogonoffdefrango.jpg"))); // NOI18N
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1380, 260, 200, 140));
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visual/imagens/icons/strogonoffdefrango.jpg"))); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visual/imagens/icons/bifecomfritas.jpg"))); // NOI18N
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 770, 200, 140));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visual/imagens/icons/strogonoffdefrango.jpg"))); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visual/imagens/icons/strogonoffdecamarão.jpg"))); // NOI18N
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 600, 200, 140));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visual/imagens/icons/strogonoffdefrango.jpg"))); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Visual/imagens/icons/strogonoffdecarne.jpg"))); // NOI18N
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 430, 200, 140));
 
         jLabel9.setFont(new java.awt.Font("Lobster 1.4", 0, 20)); // NOI18N
