@@ -14,6 +14,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
      Recibo recibo = new Recibo();
      Comida Strogonoff =  new Comida("01", "Srogonoff", 22.00);
      Comida CarneAssada = new Comida("02", "Carne Assada", 27.00);
+     Comida BifeComFritas = new Comida("03", "Bife com fritas", 25.00);
      
      
     /**
@@ -257,7 +258,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
          if (jCheckBox4.isSelected()) {
-             cont = cont += 25.00;
+             cont = cont += BifeComFritas.getValor();
         } else {
              cont = 0;
         }
