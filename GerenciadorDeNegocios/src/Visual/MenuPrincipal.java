@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Visual;
-
+import Modelos.Comida;
 /**
  *
  * @author jonat
@@ -12,6 +12,10 @@ package Visual;
 public class MenuPrincipal extends javax.swing.JFrame {
      double cont;
      Recibo recibo = new Recibo();
+     Comida Strogonoff =  new Comida("01", "Srogonoff", 22.00);
+     Comida CarneAssada = new Comida("02", "Carne Assada", 27.00);
+     
+     
     /**
      * Creates new form MenuPrincipal
      */
@@ -229,7 +233,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
        if (jCheckBox1.isSelected()) {
-             cont = cont += 25.00;
+             cont = cont += Strogonoff.getValor();
         } else {
              cont = 0;
         }
@@ -261,7 +265,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
          if (jCheckBox5.isSelected()) {
-             cont = cont += 25.00;
+             cont = cont += CarneAssada.getValor();
         } else {
              cont = 0;
         }
