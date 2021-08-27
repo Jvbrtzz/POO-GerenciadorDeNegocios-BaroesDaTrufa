@@ -5,6 +5,7 @@
  */
 package Visual;
 import Modelos.Comida;
+import Estoque.controleDeEstoque;
 /**
  *
  * @author jonat
@@ -13,11 +14,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
      double cont;
      double dec;
      Recibo recibo = new Recibo();
-     Comida StrogonoffdeFrango =  new Comida("01", "Srogonoff", 22.00);
-     Comida StrogonoffdeCarne =  new Comida("02", "Srogonoff", 25.00);
+     Comida StrogonoffdeFrango =  new Comida("01", "SrogonoffFrango", 22.00);
+     Comida StrogonoffdeCarne =  new Comida("02", "SrogonoffCarne", 25.00);
      Comida CarneAssada = new Comida("03", "Carne Assada", 27.00);
      Comida BifeComFritas = new Comida("04", "Bife com fritas", 25.00);
-     
+     controleDeEstoque teste = new controleDeEstoque();
     
      
     /**
@@ -25,6 +26,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
      */
     public MenuPrincipal() {
         initComponents();
+        teste.leitorCSV();
        
     }
 
@@ -282,7 +284,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
        if (jCheckBox1.isSelected()) {
              cont = cont += StrogonoffdeFrango.getValor();
-             
+            
              
         } else {
              cont = 0;

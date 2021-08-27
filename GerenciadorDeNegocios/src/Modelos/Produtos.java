@@ -12,9 +12,9 @@ package Modelos;
 public abstract class Produtos {
     private String nome;
     private String codigo;
-    private double valor;
+    private Double valor;
 
-    public Produtos(String codigo, String nome, double valor) {
+    public Produtos(String codigo, String nome, Double valor) {
         this.nome = nome;
         this.codigo = codigo;
         this.valor = valor;

@@ -5,15 +5,23 @@
  */
 package Estoque;
 
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 /**
  *
  * @author oi
  */
-public class controle_de_estoque {  
-    public static leitor_csv(controle_de_estoque x) {
-        Files.lines(Paths.get("estoque.csv"))
-        .forEach(System.out::println);        
+public class controleDeEstoque{
+    
+    public void leitorCSV(){
+        
+         try {Files.lines(Paths.get("estoque.csv"))
+        .forEach(System.out::println);
     }
+         catch(IOException e) {
+          e.printStackTrace();
+}
+    }
+
 }
