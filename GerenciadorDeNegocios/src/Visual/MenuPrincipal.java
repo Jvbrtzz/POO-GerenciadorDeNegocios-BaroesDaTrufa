@@ -26,7 +26,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
      */
     public MenuPrincipal() {
         initComponents();
-        teste.leitorCSV();
+        teste.estoqueComidaCSV();
        
     }
 

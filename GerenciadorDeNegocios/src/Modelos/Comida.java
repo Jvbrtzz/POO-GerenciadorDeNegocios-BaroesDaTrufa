@@ -5,14 +5,26 @@
  */
 package Modelos;
 
+import java.io.Serializable;
+
 /**
  *
  * @author jvbor
  */
-public class Comida extends Produtos{
+public class Comida extends Produtos implements Serializable{
     
-    public Comida(String codigo, String nome, double valor) {
-        super(codigo, nome, valor);
+    public Comida(String nome, String codigo, Double valor, Double qntd) {
+        super(nome, codigo, valor, qntd);
+    }
+    public Comida(String codigo, Double qtd){
+        super(codigo, qtd);
+    }
+    public Comida(String nome, String codigo, Double valor) {
+        super(nome, codigo, valor);
     }
     
+    public String toString(Produtos x) {
+		return "Product [name=" + x.getCodigo() + ", price=" + x.getQntd() +"]";
+	}
 }
+    

@@ -11,10 +11,14 @@ package Modelos;
  */
 public class Bebida extends Produtos{
 
-    public Bebida(String codigo, String nome, double valor) {
-        super(codigo, nome, valor);
+    public Bebida(String nome, String codigo, Double valor, Double qntd) {
+        super(nome, codigo, valor, qntd);
     }
-
-   
+    public Bebida(String codigo, Double qntd) {
+        super(codigo, qntd);
+}
+    public Bebida(String nome, String codigo, Double valor) {
+        super(nome, codigo, valor);
+    }
     
 }

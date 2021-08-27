@@ -5,7 +5,7 @@
  */
 package Visual;
 
-import controller.adminController;
+
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -16,14 +16,14 @@ import javax.swing.JTextField;
  */
 public class Admin extends javax.swing.JFrame {
 
-    private final adminController controller;
+   
 
     /**
      * Creates new form Admin
      */
     public Admin() {
         initComponents();
-        controller = new adminController(this);
+        
     }
 
     /**
