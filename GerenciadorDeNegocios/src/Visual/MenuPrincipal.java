@@ -12,7 +12,7 @@ import Estoque.controleDeEstoque;
  */
 public class MenuPrincipal extends javax.swing.JFrame {
      double cont;
-     double dec;
+     int dec;
      Recibo recibo = new Recibo();
      Comida StrogonoffdeFrango =  new Comida("01", "SrogonoffFrango", 22.00);
      Comida StrogonoffdeCarne =  new Comida("02", "SrogonoffCarne", 25.00);
@@ -27,8 +27,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
     public MenuPrincipal() {
         initComponents();
         teste.estoqueComidaCSV();
+        jqtdProduto1.setVisible(false);
        
-    }
+               
+        }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -46,6 +49,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jCheckBox4 = new javax.swing.JCheckBox();
         jCheckBox3 = new javax.swing.JCheckBox();
         jCheckBox2 = new javax.swing.JCheckBox();
+        jqtdProduto1 = new javax.swing.JComboBox<>();
         jCheckBox1 = new javax.swing.JCheckBox();
         jTextField8 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
@@ -145,7 +149,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 jCheckBox2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 230, -1));
+        getContentPane().add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 230, -1));
+
+        jqtdProduto1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
+        jqtdProduto1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jqtdProduto1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jqtdProduto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 200, 30));
 
         jCheckBox1.setFont(new java.awt.Font("Lobster 1.4", 0, 20)); // NOI18N
         jCheckBox1.setText("Strogonoff de Carne ");
@@ -284,6 +296,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
        if (jCheckBox1.isSelected()) {
              cont = cont += StrogonoffdeFrango.getValor();
+             
+             
             
              
         } else {
@@ -294,7 +308,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
          if (jCheckBox2.isSelected()) {
              cont = cont += StrogonoffdeCarne.getValor();
+             jqtdProduto1.setVisible(true);
         } else {
+             jqtdProduto1.setVisible(false);
              cont = 0;
         }
     }//GEN-LAST:event_jCheckBox2ActionPerformed
@@ -318,7 +334,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void jFerramentaFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFerramentaFinalizarActionPerformed
         System.out.println(cont);
         recibo.setVisible(true);
+        if(jCheckBox2.isSelected()){
+             Object cod = "01";
+             Object temp = jqtdProduto1.getSelectedItem();
+             Integer qtde = new Integer(temp.toString());
+//             diminuiEstoque(cod, qtde);
+        }
         
+                   
               
     }//GEN-LAST:event_jFerramentaFinalizarActionPerformed
 
@@ -349,6 +372,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void jCheckBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox8ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox8ActionPerformed
+
+    private void jqtdProduto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jqtdProduto1ActionPerformed
+        
+    }//GEN-LAST:event_jqtdProduto1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -426,5 +453,6 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField6;
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
+    private javax.swing.JComboBox<String> jqtdProduto1;
     // End of variables declaration//GEN-END:variables
 }

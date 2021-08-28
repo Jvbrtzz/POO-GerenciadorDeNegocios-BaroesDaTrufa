@@ -23,8 +23,6 @@ public class Comida extends Produtos implements Serializable{
         super(nome, codigo, valor);
     }
     
-    public String toString(Produtos x) {
-		return "Product [name=" + x.getCodigo() + ", price=" + x.getQntd() +"]";
-	}
+   
 }
     

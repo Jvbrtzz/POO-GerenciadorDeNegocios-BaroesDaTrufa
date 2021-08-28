@@ -42,6 +42,14 @@ public class controleDeEstoque{
                 }catch(Exception e){
                 System.out.println("Erro");
             }
+            
+    
+   
+    
+    
+    
+    
+    
         
 //         String path = "C:\\comidaEstoque.csv";
          
@@ -76,5 +84,32 @@ public class controleDeEstoque{
 //		}
 //	}
     }
-
+    public void diminuiEstoque(){
+            try{
+                
+                FileInputStream arquivo = new FileInputStream("comidaEstoque.csv");
+                InputStreamReader input = new InputStreamReader(arquivo);
+                BufferedReader br = new BufferedReader(input);
+                String linha;
+                while((line = br.readLine()) != null){
+                    array[i] = line;
+                    i++;
+                   }
+                
+                do{
+                   for (int i = 0; i < 8;i++){
+                       
+                        String temp = br[0][i];
+                        Integer qtde = new Integer(temp.toString());
+                   }
+                    
+                } while(linha != null);
+                                                                                     
+            
+            
+                
+                }catch(Exception e){
+                System.out.println("Erro");
+            }
+    }
 }
