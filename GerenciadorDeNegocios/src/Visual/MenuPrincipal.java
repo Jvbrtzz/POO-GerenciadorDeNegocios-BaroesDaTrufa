@@ -463,7 +463,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
  
     private void jCheckBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox7ActionPerformed
         if (jCheckBox7.isSelected()) {
-             cont = cont += RefrigeranteLata.getValor();
+             cont = cont += Refrigerante600.getValor();
              jqtdProduto6.setVisible(true);
         } else {
              jqtdProduto6.setVisible(false);
