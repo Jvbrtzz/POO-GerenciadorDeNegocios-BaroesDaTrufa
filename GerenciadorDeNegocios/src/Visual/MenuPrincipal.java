@@ -6,6 +6,7 @@
 package Visual;
 import Modelos.Comida;
 import Estoque.controleDeEstoque;
+import Modelos.Bebida;
 /**
  *
  * @author jonat
@@ -18,6 +19,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
      Comida StrogonoffdeCarne =  new Comida("02", "SrogonoffCarne", 25.00);
      Comida CarneAssada = new Comida("03", "Carne Assada", 27.00);
      Comida BifeComFritas = new Comida("04", "Bife com fritas", 25.00);
+     Bebida RefrigeranteLata = new Bebida("05","Refrigerante Lata", 5.00);
+     Bebida Refrigerante600 = new Bebida("06","Refrigerante 600ml", 8.00);
+     Bebida SucoDaFruta = new Bebida("07","Suco da Fruta", 10.00);
+     Bebida AguaMineral = new Bebida("08","Água Mineral", 3.00);
      controleDeEstoque teste = new controleDeEstoque();
     
      
@@ -28,6 +33,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         initComponents();
         teste.estoqueComidaCSV();
         jqtdProduto1.setVisible(false);
+        jqtdProduto2.setVisible(false);
+        jqtdProduto3.setVisible(false);
+        jqtdProduto4.setVisible(false);
+        jqtdProduto5.setVisible(false);
+        jqtdProduto6.setVisible(false);
+        jqtdProduto7.setVisible(false);
+        jqtdProduto8.setVisible(false);
        
                
         }
@@ -42,15 +54,22 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jqtdProduto8 = new javax.swing.JComboBox<>();
         jCheckBox8 = new javax.swing.JCheckBox();
+        jqtdProduto6 = new javax.swing.JComboBox<>();
         jCheckBox7 = new javax.swing.JCheckBox();
+        jqtdProduto7 = new javax.swing.JComboBox<>();
         jCheckBox6 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
+        jqtdProduto5 = new javax.swing.JComboBox<>();
         jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jqtdProduto1 = new javax.swing.JComboBox<>();
+        jqtdProduto4 = new javax.swing.JComboBox<>();
+        jCheckBox4 = new javax.swing.JCheckBox();
+        jqtdProduto3 = new javax.swing.JComboBox<>();
+        jCheckBox5 = new javax.swing.JCheckBox();
+        jqtdProduto2 = new javax.swing.JComboBox<>();
         jCheckBox1 = new javax.swing.JCheckBox();
+        jqtdProduto1 = new javax.swing.JComboBox<>();
+        jCheckBox2 = new javax.swing.JCheckBox();
         jTextField8 = new javax.swing.JTextField();
         jTextField7 = new javax.swing.JTextField();
         jTextField6 = new javax.swing.JTextField();
@@ -87,6 +106,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jqtdProduto8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
+        jqtdProduto8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jqtdProduto8ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jqtdProduto8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 780, 200, 30));
+
         jCheckBox8.setFont(new java.awt.Font("Lobster 1.4", 0, 20)); // NOI18N
         jCheckBox8.setText("Água Mineral");
         jCheckBox8.addActionListener(new java.awt.event.ActionListener() {
@@ -95,6 +122,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jCheckBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 780, 230, -1));
+
+        jqtdProduto6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
+        jqtdProduto6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jqtdProduto6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jqtdProduto6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 430, 200, 30));
 
         jCheckBox7.setFont(new java.awt.Font("Lobster 1.4", 0, 20)); // NOI18N
         jCheckBox7.setText("Refrigerante 600ml");
@@ -105,6 +140,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         getContentPane().add(jCheckBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 430, 230, -1));
 
+        jqtdProduto7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
+        jqtdProduto7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jqtdProduto7ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jqtdProduto7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 610, 200, 30));
+
         jCheckBox6.setFont(new java.awt.Font("Lobster 1.4", 0, 20)); // NOI18N
         jCheckBox6.setText("Suco da Fruta");
         jCheckBox6.addActionListener(new java.awt.event.ActionListener() {
@@ -113,6 +156,48 @@ public class MenuPrincipal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jCheckBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 610, 230, -1));
+
+        jqtdProduto5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
+        jqtdProduto5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jqtdProduto5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jqtdProduto5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 260, 200, 30));
+
+        jCheckBox3.setFont(new java.awt.Font("Lobster 1.4", 0, 20)); // NOI18N
+        jCheckBox3.setText("Refrigerante Lata");
+        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 260, 230, -1));
+
+        jqtdProduto4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
+        jqtdProduto4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jqtdProduto4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jqtdProduto4, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 780, 200, 30));
+
+        jCheckBox4.setFont(new java.awt.Font("Lobster 1.4", 0, 20)); // NOI18N
+        jCheckBox4.setText("Bife com batata Fritas");
+        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 780, 230, -1));
+
+        jqtdProduto3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
+        jqtdProduto3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jqtdProduto3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jqtdProduto3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 580, 200, 30));
 
         jCheckBox5.setFont(new java.awt.Font("Lobster 1.4", 0, 20)); // NOI18N
         jCheckBox5.setText("Carne Assada com Batata");
@@ -124,40 +209,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         getContentPane().add(jCheckBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 580, 260, -1));
 
-        jCheckBox4.setFont(new java.awt.Font("Lobster 1.4", 0, 20)); // NOI18N
-        jCheckBox4.setText("Bife com batata Fritas");
-        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
+        jqtdProduto2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
+        jqtdProduto2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox4ActionPerformed(evt);
+                jqtdProduto2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jCheckBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 780, 230, -1));
-
-        jCheckBox3.setFont(new java.awt.Font("Lobster 1.4", 0, 20)); // NOI18N
-        jCheckBox3.setText("Refrigerante Lata");
-        jCheckBox3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox3ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jCheckBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 260, 230, -1));
-
-        jCheckBox2.setFont(new java.awt.Font("Lobster 1.4", 0, 20)); // NOI18N
-        jCheckBox2.setText("Strogonoff de Frango");
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 230, -1));
-
-        jqtdProduto1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
-        jqtdProduto1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jqtdProduto1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jqtdProduto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 200, 30));
+        getContentPane().add(jqtdProduto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 420, 200, 30));
 
         jCheckBox1.setFont(new java.awt.Font("Lobster 1.4", 0, 20)); // NOI18N
         jCheckBox1.setText("Strogonoff de Carne ");
@@ -169,28 +227,51 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 240, -1));
 
-        jTextField8.setText("jTextField1");
+        jqtdProduto1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3" }));
+        jqtdProduto1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jqtdProduto1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jqtdProduto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 200, 30));
+
+        jCheckBox2.setFont(new java.awt.Font("Lobster 1.4", 0, 20)); // NOI18N
+        jCheckBox2.setText("Strogonoff de Frango");
+        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jCheckBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 230, -1));
+
+        jTextField8.setText("Água Mineral");
         getContentPane().add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 830, 530, 70));
 
-        jTextField7.setText("jTextField1");
+        jTextField7.setText("Suco da Fruta(Morango, Maracuja, Uva e Abacaxi com Hortelã)");
         getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 660, 530, 70));
 
-        jTextField6.setText("jTextField1");
+        jTextField6.setText("Refrigerante 600ml(Coca-Cola, Coca-Zero, Sprit,Fanta Uva e Fanta Laranja)");
         getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 480, 530, 70));
 
-        jTextField5.setText("jTextField1");
+        jTextField5.setText("Refrigerante Lata(Coca-Cola, Coca-Zero, Sprit,Fanta Uva e Fanta Laranja, Fanta guarana)");
         getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 310, 530, 70));
 
-        jTextField4.setText("jTextField1");
+        jTextField4.setText("Bife com Fritas, acompanhado de arroz e salada.");
         getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 830, 530, 70));
 
-        jTextField3.setText("jTextField1");
+        jTextField3.setText("Carne Assada acompanhada com batatas, uma porção de arroz, farofa ou salada.");
+        jTextField3.setToolTipText("");
         getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 630, 530, 70));
 
-        jTextField2.setText("jTextField1");
+        jTextField2.setText(" Strogonoff de Carne cremoso e cheio de sabo, acompanhado de uma porção de arroz e batata palha.");
         getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, 530, 70));
 
-        jTextField1.setText("jTextField1");
+        jTextField1.setText("Strogonoff de Frango cremoso e cheio de sabo, acompanhado de uma porção de arroz e batata palha.");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 530, 70));
 
         jLabel19.setFont(new java.awt.Font("Lobster 1.4", 0, 20)); // NOI18N
@@ -295,19 +376,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
        if (jCheckBox1.isSelected()) {
-             cont = cont += StrogonoffdeFrango.getValor();
-             
-             
-            
+             cont = cont += StrogonoffdeCarne.getValor(); 
+             jqtdProduto2.setVisible(true);
              
         } else {
+            jqtdProduto2.setVisible(false);
              cont = 0;
         }
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
          if (jCheckBox2.isSelected()) {
-             cont = cont += StrogonoffdeCarne.getValor();
+             cont = cont += StrogonoffdeFrango.getValor();
              jqtdProduto1.setVisible(true);
         } else {
              jqtdProduto1.setVisible(false);
@@ -318,7 +398,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
          if (jCheckBox4.isSelected()) {
              cont = cont += BifeComFritas.getValor();
+             jqtdProduto4.setVisible(true);
         } else {
+             jqtdProduto4.setVisible(false);
              cont = 0;
         }
     }//GEN-LAST:event_jCheckBox4ActionPerformed
@@ -326,7 +408,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
          if (jCheckBox5.isSelected()) {
              cont = cont += CarneAssada.getValor();
+             jqtdProduto3.setVisible(true);
         } else {
+             jqtdProduto3.setVisible(false);
              cont = 0;
         }
     }//GEN-LAST:event_jCheckBox5ActionPerformed
@@ -358,24 +442,80 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_JFerramentasSairActionPerformed
 
     private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
-        // TODO add your handling code here:
+        if (jCheckBox3.isSelected()) {
+             cont = cont += RefrigeranteLata.getValor();
+             jqtdProduto5.setVisible(true);
+        } else {
+             jqtdProduto5.setVisible(false);
+             cont = 0;
+        }
     }//GEN-LAST:event_jCheckBox3ActionPerformed
 
     private void jCheckBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox6ActionPerformed
-        // TODO add your handling code here:
+        if (jCheckBox6.isSelected()) {
+             cont = cont += SucoDaFruta.getValor();
+             jqtdProduto7.setVisible(true);
+        } else {
+             jqtdProduto7.setVisible(false);
+             cont = 0;
+        }
     }//GEN-LAST:event_jCheckBox6ActionPerformed
-
+ 
     private void jCheckBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox7ActionPerformed
-        // TODO add your handling code here:
+        if (jCheckBox7.isSelected()) {
+             cont = cont += RefrigeranteLata.getValor();
+             jqtdProduto6.setVisible(true);
+        } else {
+             jqtdProduto6.setVisible(false);
+             cont = 0;
+        }
     }//GEN-LAST:event_jCheckBox7ActionPerformed
 
     private void jCheckBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox8ActionPerformed
-        // TODO add your handling code here:
+        if (jCheckBox8.isSelected()) {
+             cont = cont += AguaMineral.getValor();
+             jqtdProduto8.setVisible(true);
+        } else {
+             jqtdProduto8.setVisible(false);
+             cont = 0;
+        }
     }//GEN-LAST:event_jCheckBox8ActionPerformed
 
     private void jqtdProduto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jqtdProduto1ActionPerformed
         
     }//GEN-LAST:event_jqtdProduto1ActionPerformed
+
+    private void jqtdProduto2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jqtdProduto2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jqtdProduto2ActionPerformed
+
+    private void jqtdProduto3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jqtdProduto3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jqtdProduto3ActionPerformed
+
+    private void jqtdProduto4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jqtdProduto4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jqtdProduto4ActionPerformed
+
+    private void jqtdProduto5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jqtdProduto5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jqtdProduto5ActionPerformed
+
+    private void jqtdProduto6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jqtdProduto6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jqtdProduto6ActionPerformed
+
+    private void jqtdProduto7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jqtdProduto7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jqtdProduto7ActionPerformed
+
+    private void jqtdProduto8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jqtdProduto8ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jqtdProduto8ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -454,5 +594,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JComboBox<String> jqtdProduto1;
+    private javax.swing.JComboBox<String> jqtdProduto2;
+    private javax.swing.JComboBox<String> jqtdProduto3;
+    private javax.swing.JComboBox<String> jqtdProduto4;
+    private javax.swing.JComboBox<String> jqtdProduto5;
+    private javax.swing.JComboBox<String> jqtdProduto6;
+    private javax.swing.JComboBox<String> jqtdProduto7;
+    private javax.swing.JComboBox<String> jqtdProduto8;
     // End of variables declaration//GEN-END:variables
 }

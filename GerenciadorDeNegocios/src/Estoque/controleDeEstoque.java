@@ -85,14 +85,14 @@ public class controleDeEstoque{
 //	}
     }
     public void diminuiEstoque(){
-            try{
+         /*try{
                 
                 FileInputStream arquivo = new FileInputStream("comidaEstoque.csv");
                 InputStreamReader input = new InputStreamReader(arquivo);
                 BufferedReader br = new BufferedReader(input);
                 String linha;
                 while((line = br.readLine()) != null){
-                    array[i] = line;
+                    array = line{
                     i++;
                    }
                 
@@ -109,7 +109,9 @@ public class controleDeEstoque{
             
                 
                 }catch(Exception e){
-                System.out.println("Erro");
-            }
-    }
-}
+               System.out.println("Erro");
+            }} 
+        
+    }*/
+    
+}}
