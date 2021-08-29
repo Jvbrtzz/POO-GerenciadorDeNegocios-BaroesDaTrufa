@@ -46,25 +46,27 @@ public class controleDeEstoque{
                 System.out.println("Erro");
             }*/
             
-            List<List<String>> records = new ArrayList<>();
-            try (BufferedReader br = new BufferedReader(new FileReader("comidaEstoque.csv"))) {
-                String line;
-                while ((line = br.readLine()) != null) {
-                    String[] values = line.split(";");
-                    records.add(Arrays.asList(values));
-                }
-            }
-            catch (FileNotFoundException ex){
-                System.out.println("Erro");
-            }
-            catch (IOException ex){
-                System.out.println("Erro");
-            }
-            
-            System.out.println(records);
-            
-    
-    
+//            List<List<String>> records = new ArrayList<>();
+//            try (BufferedReader br = new BufferedReader(new FileReader("comidaEstoque.csv"))) {
+//                String line;
+//                while ((line = br.readLine()) != null) {
+//                    String[] values = line.split(";");
+//                    records.add(Arrays.asList(values));
+//                    
+//                }
+//            }
+//            catch (FileNotFoundException ex){
+//                System.out.println("Erro");
+//            }
+//            catch (IOException ex){
+//                System.out.println("Erro");
+//            }
+//            int i;
+//            String t = records.get(i).get(0);
+//            int cod = 
+//            
+//    
+//    
     
     
     
@@ -102,8 +104,60 @@ public class controleDeEstoque{
 //		}
 //	}
     }
-    public void diminuiEstoque(){
-         /*try{
+    public void diminuiEstoque(int cod, int qtde){
+         List<List<String>> records = new ArrayList<>();
+            try (BufferedReader br = new BufferedReader(new FileReader("comidaEstoque.csv"))) {
+                String line;
+                while ((line = br.readLine()) != null) {
+                    String[] values = line.split(";");
+                    records.add(Arrays.asList(values));
+                    int i;
+                    
+                    
+                    
+                    for(i = 0; i<8; i++){
+                        Integer temp = new Integer(records.get(i).get(0));
+                        if(temp == cod){
+                            Integer temp2 = new Integer(records.get(i).get(1));
+                            int novoEstoque = temp - temp2;
+                            String temp3 = String.valueOf(novoEstoque);
+                            String records.get(i).get(1)
+                            
+                        }
+                    
+                    }
+                    
+                    
+                    
+                }
+            }
+            
+            catch (IOException ex){
+                System.out.println("Erro");
+            }
+            
+            
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /*try{
                 
                 FileInputStream arquivo = new FileInputStream("comidaEstoque.csv");
                 InputStreamReader input = new InputStreamReader(arquivo);

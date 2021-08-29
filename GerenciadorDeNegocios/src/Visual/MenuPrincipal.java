@@ -31,7 +31,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
      */
     public MenuPrincipal() {
         initComponents();
-        teste.estoqueComidaCSV();
+        
         jqtdProduto1.setVisible(false);
         jqtdProduto2.setVisible(false);
         jqtdProduto3.setVisible(false);
@@ -419,10 +419,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         System.out.println(cont);
         recibo.setVisible(true);
         if(jCheckBox2.isSelected()){
-             Object cod = "01";
+             int cod = 01;
              Object temp = jqtdProduto1.getSelectedItem();
              Integer qtde = new Integer(temp.toString());
-//             diminuiEstoque(cod, qtde);
+             teste.diminuiEstoque(cod, qtde);
+             
         }
         
                    
@@ -434,6 +435,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jCheckBox2.setSelected(false);
         jCheckBox4.setSelected(false);
         jCheckBox5.setSelected(false);
+        jCheckBox6.setSelected(false);
+        jCheckBox7.setSelected(false);
+        jCheckBox8.setSelected(false);
+        
+        jqtdProduto1.setVisible(false);
+        jqtdProduto2.setVisible(false);
+        jqtdProduto3.setVisible(false);
+        jqtdProduto4.setVisible(false);
+        jqtdProduto5.setVisible(false);
         cont = 0;
     }//GEN-LAST:event_jFerramentasAtualizarActionPerformed
 
