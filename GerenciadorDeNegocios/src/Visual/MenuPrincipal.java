@@ -14,6 +14,16 @@ import Modelos.Bebida;
 public class MenuPrincipal extends javax.swing.JFrame {
      double cont;
      int dec;
+     double total1;
+     double total2;
+     double total3;
+     double total4;
+     double total5;
+     double total6;
+     double total7;
+     double total8;
+     double totalGeral;
+     
      Recibo recibo = new Recibo();
      Comida StrogonoffdeFrango =  new Comida("01", "SrogonoffFrango", 22.00);
      Comida StrogonoffdeCarne =  new Comida("02", "SrogonoffCarne", 25.00);
@@ -379,6 +389,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
              cont = cont += StrogonoffdeCarne.getValor(); 
              jqtdProduto2.setVisible(true);
              
+            
         } else {
             jqtdProduto2.setVisible(false);
              cont = 0;
@@ -389,6 +400,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
          if (jCheckBox2.isSelected()) {
              cont = cont += StrogonoffdeFrango.getValor();
              jqtdProduto1.setVisible(true);
+            
+             
+             
+            
         } else {
              jqtdProduto1.setVisible(false);
              cont = 0;
@@ -399,6 +414,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
          if (jCheckBox4.isSelected()) {
              cont = cont += BifeComFritas.getValor();
              jqtdProduto4.setVisible(true);
+             
+             
         } else {
              jqtdProduto4.setVisible(false);
              cont = 0;
@@ -409,6 +426,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
          if (jCheckBox5.isSelected()) {
              cont = cont += CarneAssada.getValor();
              jqtdProduto3.setVisible(true);
+             
+             
+             
         } else {
              jqtdProduto3.setVisible(false);
              cont = 0;
@@ -416,34 +436,57 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBox5ActionPerformed
 
     private void jFerramentaFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFerramentaFinalizarActionPerformed
-        System.out.println(cont);
+                 
         recibo.setVisible(true);
-        if(jCheckBox2.isSelected()){
-             int cod = 01;
-             Object temp = jqtdProduto1.getSelectedItem();
-             Integer qtde = new Integer(temp.toString());
-             teste.diminuiEstoque(cod, qtde);
-             
-        }
+       
         
-                   
+        
+         totalGeral = total1 + total2 + total3 + total4 + total5  + total6  + total7  + total8;
+//         System.out.println(total1);
+//         System.out.println(total2);
+//         System.out.println(total3); 
+//         System.out.println(total4);  
+//         System.out.println(total5); 
+//         System.out.println(total6); 
+//         System.out.println(total7); 
+//         System.out.println(total8); 
+        
+         System.out.println(totalGeral);
+
+        
+                      
               
     }//GEN-LAST:event_jFerramentaFinalizarActionPerformed
 
     private void jFerramentasAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFerramentasAtualizarActionPerformed
         jCheckBox1.setSelected(false);
         jCheckBox2.setSelected(false);
+        jCheckBox3.setSelected(false);
         jCheckBox4.setSelected(false);
         jCheckBox5.setSelected(false);
         jCheckBox6.setSelected(false);
         jCheckBox7.setSelected(false);
         jCheckBox8.setSelected(false);
         
+        
         jqtdProduto1.setVisible(false);
         jqtdProduto2.setVisible(false);
         jqtdProduto3.setVisible(false);
         jqtdProduto4.setVisible(false);
         jqtdProduto5.setVisible(false);
+        jqtdProduto6.setVisible(false);
+        jqtdProduto7.setVisible(false);
+        jqtdProduto8.setVisible(false);        
+        
+        total1 = 0;
+        total2 = 0;
+        total3 = 0;
+        total4 = 0;
+        total5 = 0;
+        total6 = 0;
+        total7 = 0;
+        total8 = 0;
+        
         cont = 0;
     }//GEN-LAST:event_jFerramentasAtualizarActionPerformed
 
@@ -455,6 +498,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         if (jCheckBox3.isSelected()) {
              cont = cont += RefrigeranteLata.getValor();
              jqtdProduto5.setVisible(true);
+             
+             
         } else {
              jqtdProduto5.setVisible(false);
              cont = 0;
@@ -465,6 +510,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         if (jCheckBox6.isSelected()) {
              cont = cont += SucoDaFruta.getValor();
              jqtdProduto7.setVisible(true);
+             
         } else {
              jqtdProduto7.setVisible(false);
              cont = 0;
@@ -475,6 +521,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         if (jCheckBox7.isSelected()) {
              cont = cont += Refrigerante600.getValor();
              jqtdProduto6.setVisible(true);
+            
         } else {
              jqtdProduto6.setVisible(false);
              cont = 0;
@@ -484,7 +531,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void jCheckBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox8ActionPerformed
         if (jCheckBox8.isSelected()) {
              cont = cont += AguaMineral.getValor();
+             
              jqtdProduto8.setVisible(true);
+             
         } else {
              jqtdProduto8.setVisible(false);
              cont = 0;
@@ -492,35 +541,53 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBox8ActionPerformed
 
     private void jqtdProduto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jqtdProduto1ActionPerformed
-        
+         Object temp = jqtdProduto1.getSelectedItem();
+         Integer qtde = new Integer(temp.toString());
+         total1 = qtde*StrogonoffdeFrango.getValor();
     }//GEN-LAST:event_jqtdProduto1ActionPerformed
 
     private void jqtdProduto2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jqtdProduto2ActionPerformed
-        // TODO add your handling code here:
+        Object temp = jqtdProduto2.getSelectedItem();
+             Integer qtde = new Integer(temp.toString());
+             
+             total2 = qtde*StrogonoffdeCarne.getValor();
+             
     }//GEN-LAST:event_jqtdProduto2ActionPerformed
 
     private void jqtdProduto3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jqtdProduto3ActionPerformed
-        // TODO add your handling code here:
+        Object temp = jqtdProduto3.getSelectedItem();
+             Integer qtde = new Integer(temp.toString());
+             total4 = qtde*CarneAssada.getValor();
     }//GEN-LAST:event_jqtdProduto3ActionPerformed
 
     private void jqtdProduto4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jqtdProduto4ActionPerformed
-        // TODO add your handling code here:
+        Object temp = jqtdProduto4.getSelectedItem();
+             Integer qtde = new Integer(temp.toString());
+             total3 = qtde*BifeComFritas.getValor();
     }//GEN-LAST:event_jqtdProduto4ActionPerformed
 
     private void jqtdProduto5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jqtdProduto5ActionPerformed
-        // TODO add your handling code here:
+        Object temp = jqtdProduto5.getSelectedItem();
+             Integer qtde = new Integer(temp.toString());
+             total5 = qtde*RefrigeranteLata.getValor();
     }//GEN-LAST:event_jqtdProduto5ActionPerformed
 
     private void jqtdProduto6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jqtdProduto6ActionPerformed
-        // TODO add your handling code here:
+         Object temp = jqtdProduto6.getSelectedItem();
+             Integer qtde = new Integer(temp.toString());
+             total7 = qtde*Refrigerante600.getValor();
     }//GEN-LAST:event_jqtdProduto6ActionPerformed
 
     private void jqtdProduto7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jqtdProduto7ActionPerformed
-        // TODO add your handling code here:
+        Object temp = jqtdProduto7.getSelectedItem();
+             Integer qtde = new Integer(temp.toString());
+             total6 = qtde*SucoDaFruta.getValor();
     }//GEN-LAST:event_jqtdProduto7ActionPerformed
 
     private void jqtdProduto8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jqtdProduto8ActionPerformed
-        // TODO add your handling code here:
+        Object temp = jqtdProduto8.getSelectedItem();
+             Integer qtde = new Integer(temp.toString());
+             total8 = qtde*AguaMineral.getValor();
     }//GEN-LAST:event_jqtdProduto8ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

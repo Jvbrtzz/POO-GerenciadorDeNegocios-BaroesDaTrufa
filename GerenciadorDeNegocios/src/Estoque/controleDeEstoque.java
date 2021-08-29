@@ -121,7 +121,7 @@ public class controleDeEstoque{
                             Integer temp2 = new Integer(records.get(i).get(1));
                             int novoEstoque = temp - temp2;
                             String temp3 = String.valueOf(novoEstoque);
-                            String records.get(i).get(1)
+//                            records[1] = temp3;
                             
                         }
                     
