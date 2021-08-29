@@ -15,6 +15,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Arrays;
 /**
  *
  * @author oi
@@ -22,7 +25,7 @@ import java.nio.file.Paths;
 public class controleDeEstoque{
     
     public void estoqueComidaCSV(){
-            try{
+           /* try{
                 FileInputStream arquivo = new FileInputStream("comidaEstoque.csv");
                 InputStreamReader input = new InputStreamReader(arquivo);
                 BufferedReader br = new BufferedReader(input);
@@ -41,10 +44,25 @@ public class controleDeEstoque{
                 
                 }catch(Exception e){
                 System.out.println("Erro");
+            }*/
+            
+            List<List<String>> records = new ArrayList<>();
+            try (BufferedReader br = new BufferedReader(new FileReader("comidaEstoque.csv"))) {
+                String line;
+                while ((line = br.readLine()) != null) {
+                    String[] values = line.split(";");
+                    records.add(Arrays.asList(values));
+                }
+            }
+            catch (FileNotFoundException ex){
+                System.out.println("Erro");
+            }
+            catch (IOException ex){
+                System.out.println("Erro");
             }
             
-    
-   
+            System.out.println(records);
+            
     
     
     
