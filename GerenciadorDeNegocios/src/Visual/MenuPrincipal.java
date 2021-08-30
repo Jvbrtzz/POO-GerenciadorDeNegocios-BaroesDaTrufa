@@ -5,7 +5,7 @@
  */
 package Visual;
 import Modelos.Comida;
-import Estoque.controleDeEstoque;
+import Estoque.ControleDeEstoque;
 import Modelos.Bebida;
 /**
  *
@@ -33,8 +33,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
      Bebida Refrigerante600 = new Bebida("06","Refrigerante 600ml", 8.00);
      Bebida SucoDaFruta = new Bebida("07","Suco da Fruta", 10.00);
      Bebida AguaMineral = new Bebida("08","Água Mineral", 3.00);
-     controleDeEstoque teste = new controleDeEstoque();
+     ControleDeEstoque teste = new ControleDeEstoque();
     
+    //ler de arquivo
+    //classe só pra tratar aqruivos
+    //ler comidas do arquivo
+    //retornar listas de comida do arquivo 
+    //atualizar quando fechar arquivo
      
     /**
      * Creates new form MenuPrincipal
@@ -42,6 +47,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     public MenuPrincipal() {
         initComponents();
         
+        teste.diminuiEstoque();
         jqtdProduto1.setVisible(false);
         jqtdProduto2.setVisible(false);
         jqtdProduto3.setVisible(false);
