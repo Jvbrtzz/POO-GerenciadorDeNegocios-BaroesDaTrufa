@@ -47,7 +47,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     public MenuPrincipal() {
         initComponents();
         
-        teste.diminuiEstoque();
+        teste.estoqueComida();
         jqtdProduto1.setVisible(false);
         jqtdProduto2.setVisible(false);
         jqtdProduto3.setVisible(false);

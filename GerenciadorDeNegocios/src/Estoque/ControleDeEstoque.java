@@ -18,173 +18,58 @@ import java.nio.file.Paths;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Arrays;
+
 /**
  *
  * @author oi
  */
 public class ControleDeEstoque{
     
-    public void estoqueComidaCSV(){
-           /* try{
-                FileInputStream arquivo = new FileInputStream("comidaEstoque.csv");
-                InputStreamReader input = new InputStreamReader(arquivo);
-                BufferedReader br = new BufferedReader(input);
-                
-                String linha;
-                
-                do{
+    public static void estoqueComida(){
+        
+         
+        try{ 
+            FileInputStream arq = new FileInputStream("comidaEstoque.txt");
+            InputStreamReader input = new InputStreamReader(arq);
+            BufferedReader br = new BufferedReader(input);
+         
+            
+            String linha = null;
+            
+            do{
+                try{
                     linha = br.readLine();
-                    if(linha != null){
-                        System.out.println(""+ linha);
-                    }
-                } while(linha != null);
-                                                                                     
-            
-            
-                
-                }catch(Exception e){
-                System.out.println("Erro");
-            }*/
-            
-//            List<List<String>> records = new ArrayList<>();
-//            try (BufferedReader br = new BufferedReader(new FileReader("comidaEstoque.csv"))) {
-//                String line;
-//                while ((line = br.readLine()) != null) {
-//                    String[] values = line.split(";");
-//                    records.add(Arrays.asList(values));
-//                    
-//                }
-//            }
-//            catch (FileNotFoundException ex){
-//                System.out.println("Erro");
-//            }
-//            catch (IOException ex){
-//                System.out.println("Erro");
-//            }
-//            int i;
-//            String t = records.get(i).get(0);
-//            int cod = 
-//            
-//    
-//    
-    
-    
-    
-        
-//         String path = "C:\\comidaEstoque.csv";
-         
-         
-		
-//		List<Comida> list = new ArrayList<Comida>();
-//		
-//		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
-//			
-//		String line = br.readLine();
-//		line = br.readLine();
-//		while (line != null) {
-//				
-//				String[] vect = line.split(";");
-//				String codigo = vect[0];
-//				Double qtd = Double.parseDouble(vect[1]);
-//				
-//				
-//				Comida prod = new Comida(codigo, qtd);
-//				list.add(prod);
-//				
-//				line = br.readLine();
-//			}	
-//			
-//			System.out.println("comidas");
-//			for (Produtos p : list) {   
-//				System.out.println(p);
-//			}
-//		}
-//		catch (IOException e) {
-//			System.out.println("Error: " + e.getMessage());
-//		}
-//	}
-    }
-    public void diminuiEstoque(){
-         List<List<String>> records = new ArrayList<>();
-            try (BufferedReader br = new BufferedReader(new FileReader("comidaEstoque.csv"))) {
-                String line;
-                while ((line = br.readLine()) != null) {
-                    String[] values = line.split(";");
-                    System.out.println(values[1]);
-                    records.add(Arrays.asList(values));
-                    int i;
+                    String[] dado = linha.split(";");                    
+                        int cont = 0;
+                        for(int i = 0; i < dado.length; i+=4){                            
+                            if(dado[i] == "03"){
+                                int temp = Integer.parseInt(dado[i+3]);
+                                temp -= 5;
+                                dado[i+3] = Integer.toString(temp);
+//                                String sub = dado[i] + " ; " +  dado[i+1] + " ; " +  dado[i+2] + " ; " +  dado[i+3] + " ; ";
+                                                            
+                            }
+                            cont ++;
+                        }
+                        String asd = dado[11];
+                        System.out.println(asd);
                     
                     
-//                    
-//                    for(i = 0; i<8; i++){
-//                        Integer temp = new Integer(records.get(i).get(0));
-//                        if(temp == 1){
-//                            Integer temp2 = new Integer(records.get(i).get(1));
-//                            int novoEstoque = temp - temp2;
-//                            String temp3 = String.valueOf(novoEstoque);
-////                            records[1] = temp3;
-//                            
-//                        }
-//                    
-//                    }
-//                    
-//                    
-                    
+                }catch(IOException e){
+                    System.out.println(e + "Erro");
                 }
-            }
-            
-            catch (IOException ex){
-                System.out.println("Erro");
-            }
             
             
+            }while(linha != null);            
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        /*try{
-                
-                FileInputStream arquivo = new FileInputStream("comidaEstoque.csv");
-                InputStreamReader input = new InputStreamReader(arquivo);
-                BufferedReader br = new BufferedReader(input);
-                String linha;
-                while((line = br.readLine()) != null){
-                    array = line{
-                    i++;
-                   }
-                
-                do{
-                   for (int i = 0; i < 8;i++){
-                       
-                        String temp = br[0][i];
-                        Integer qtde = new Integer(temp.toString());
-                   }
-                    
-                } while(linha != null);
-                                                                                     
             
-            
-                
-                }catch(Exception e){
-               System.out.println("Erro");
-            }} 
-        
-    }*/
+        }catch(FileNotFoundException e){    
+            System.out.println(e + "Arquivo não encontrado");
+        }
+    }
     
-}}
+    public static void controleEstoque(){
+        
+    
+    }
+}

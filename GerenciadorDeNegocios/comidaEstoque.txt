@@ -1,0 +1,8 @@
+01 ; Strogonoff de Frango ; 22 ; 10
+02 ; Strogonoff de Carne ; 25 ; 10
+03 ; Carne Assada ; 27 ; 10
+04 ; Bife com Fritas ; 25 ; 10
+05 ; Refrigerante Lata ; 5 ; 10
+06 ; Refrigerante 600ml; 8 ; 10
+07 ; Suco de Frutas ; 10 ; 10
+08 ; Agua Mineral ; 3 ; 10
