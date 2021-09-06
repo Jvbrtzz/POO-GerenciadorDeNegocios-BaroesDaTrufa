@@ -5,7 +5,7 @@
  */
 package Visual;
 import Modelos.Comida;
-import Estoque.ControleDeEstoque;
+//import Estoque.ControleDeEstoque;
 import Modelos.Bebida;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -40,7 +40,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
      Bebida Refrigerante600 = new Bebida("06","Refrigerante 600ml", 8.00);
      Bebida SucoDaFruta = new Bebida("07","Suco da Fruta", 10.00);
      Bebida AguaMineral = new Bebida("08","Água Mineral", 3.00);
-     ControleDeEstoque teste = new ControleDeEstoque();
+     //ControleDeEstoque teste = new ControleDeEstoque();
     
   
      
@@ -52,7 +52,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         
         
         
-        teste.estoqueComida();
+        //teste.estoqueComida();
         jqtdProduto1.setVisible(false);
         jqtdProduto2.setVisible(false);
         jqtdProduto3.setVisible(false);
@@ -459,8 +459,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
 //         System.out.println(total7); 
 //         System.out.println(total8); 
            
-           JOptionPane.showMessageDialog(null,"RECIBO:\n  -----------------------------------------------  \n Strogonoff de Frango:" + total1 + "\n ----------------------------------------------- \n Strogonoff de Carne: " + total2 + " \n ----------------------------------------------- \n Strogonoff de Carne: " + total3 + " \n ----------------------------------------------- \n  Bife com fritas: " + total4 + "\n -----------------------------------------------\n Refrigerante Lata: " + total5 + "\n ----------------------------------------------- \n Refrigerante de 600ml: " + total6 + "\n ----------------------------------------------- \n Suco de Fruta: " + total7 + "\n ----------------------------------------------- \n Agua mineral: " + total8 + "\n ----------------------------------------------- \n TOTAL: " + totalGeral + "\n ----------------------------------------------- \n");
-        
+           //JOptionPane.showMessageDialog(null,"RECIBO:\n  -----------------------------------------------  \n Strogonoff de Frango:" + total1 + "\n ----------------------------------------------- \n Strogonoff de Carne: " + total2 + " \n ----------------------------------------------- \n Strogonoff de Carne: " + total3 + " \n ----------------------------------------------- \n  Bife com fritas: " + total4 + "\n -----------------------------------------------\n Refrigerante Lata: " + total5 + "\n ----------------------------------------------- \n Refrigerante de 600ml: " + total6 + "\n ----------------------------------------------- \n Suco de Fruta: " + total7 + "\n ----------------------------------------------- \n Agua mineral: " + total8 + "\n ----------------------------------------------- \n TOTAL: " + totalGeral + "\n ----------------------------------------------- \n");
+           JOptionPane.showMessageDialog(null, "\"RECIBO:\\n  -----------------------------------------------  \\n Strogonoff de Frango:\" + total1 + \"\\n ----------------------------------------------- \\n Strogonoff de Carne: \" + total2 + \" \\n ----------------------------------------------- \\n Strogonoff de Carne: \" + total3 + \" \\n ----------------------------------------------- \\n  Bife com fritas: \" + total4 + \"\\n -----------------------------------------------\\n Refrigerante Lata: \" + total5 + \"\\n ----------------------------------------------- \\n Refrigerante de 600ml: \" + total6 + \"\\n ----------------------------------------------- \\n Suco de Fruta: \" + total7 + \"\\n ----------------------------------------------- \\n Agua mineral: \" + total8 + \"\\n ----------------------------------------------- \\n TOTAL: \" + totalGeral + \"\\n ----------------------------------------------- \\n\"", "Recibo", HEIGHT, logo);
            System.out.println(totalGeral);
 
         
