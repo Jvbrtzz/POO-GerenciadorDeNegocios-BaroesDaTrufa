@@ -7,6 +7,12 @@ package Visual;
 import Modelos.Comida;
 import Estoque.ControleDeEstoque;
 import Modelos.Bebida;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import java.awt.BorderLayout;
+import java.awt.Image;
 /**
  *
  * @author jonat
@@ -24,7 +30,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
      double total8;
      double totalGeral;
      
-     Recibo recibo = new Recibo();
+       
+    
      Comida StrogonoffdeFrango =  new Comida("01", "SrogonoffFrango", 22.00);
      Comida StrogonoffdeCarne =  new Comida("02", "SrogonoffCarne", 25.00);
      Comida CarneAssada = new Comida("03", "Carne Assada", 27.00);
@@ -35,17 +42,15 @@ public class MenuPrincipal extends javax.swing.JFrame {
      Bebida AguaMineral = new Bebida("08","Água Mineral", 3.00);
      ControleDeEstoque teste = new ControleDeEstoque();
     
-    //ler de arquivo
-    //classe só pra tratar aqruivos
-    //ler comidas do arquivo
-    //retornar listas de comida do arquivo 
-    //atualizar quando fechar arquivo
+  
      
     /**
      * Creates new form MenuPrincipal
      */
     public MenuPrincipal() {
         initComponents();
+        
+        
         
         teste.estoqueComida();
         jqtdProduto1.setVisible(false);
@@ -442,12 +447,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBox5ActionPerformed
 
     private void jFerramentaFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFerramentaFinalizarActionPerformed
-                 
-        recibo.setVisible(true);
-       
-        
-        
-         totalGeral = total1 + total2 + total3 + total4 + total5  + total6  + total7  + total8;
+           
+           ImageIcon logo = new ImageIcon("chef.png");
+           totalGeral = total1 + total2 + total3 + total4 + total5  + total6  + total7  + total8;
 //         System.out.println(total1);
 //         System.out.println(total2);
 //         System.out.println(total3); 
@@ -456,8 +458,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
 //         System.out.println(total6); 
 //         System.out.println(total7); 
 //         System.out.println(total8); 
+           
+           JOptionPane.showMessageDialog(null,"RECIBO:\n  -----------------------------------------------  \n Strogonoff de Frango:" + total1 + "\n ----------------------------------------------- \n Strogonoff de Carne: " + total2 + " \n ----------------------------------------------- \n Strogonoff de Carne: " + total3 + " \n ----------------------------------------------- \n  Bife com fritas: " + total4 + "\n -----------------------------------------------\n Refrigerante Lata: " + total5 + "\n ----------------------------------------------- \n Refrigerante de 600ml: " + total6 + "\n ----------------------------------------------- \n Suco de Fruta: " + total7 + "\n ----------------------------------------------- \n Agua mineral: " + total8 + "\n ----------------------------------------------- \n TOTAL: " + totalGeral + "\n ----------------------------------------------- \n");
         
-         System.out.println(totalGeral);
+           System.out.println(totalGeral);
 
         
                       
