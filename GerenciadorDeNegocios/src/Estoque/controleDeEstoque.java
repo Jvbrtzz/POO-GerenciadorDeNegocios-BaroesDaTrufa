@@ -39,21 +39,20 @@ public class ControleDeEstoque{
             do{
                 try{
                     linha = br.readLine();
-                    String[] dado = linha.split(";");                    
+//                    String[] dado = linha.split(";");                    
                         int cont = 0;
-                        for(int i = 0; i < dado.length; i+=4){                            
-                            if(dado[i] == "03"){
-                                int temp = Integer.parseInt(dado[i+3]);
-                                temp -= 5;
-                                dado[i+3] = Integer.toString(temp);
+                        System.out.println(linha);
+//                        for(int i = 0; i < dado.length; i+=4){                            
+//                            if(dado[i] == "03"){
+//                                int temp = Integer.parseInt(dado[i+3]);
+//                                temp -= 5;
+//                                dado[i+3] = Integer.toString(temp);
 //                                String sub = dado[i] + " ; " +  dado[i+1] + " ; " +  dado[i+2] + " ; " +  dado[i+3] + " ; ";
                                                             
-                            }
+//                            }
                             cont ++;
-                        }
-                        String asd = dado[11];
-                        System.out.println(asd);
-                    
+//                        }                                       
+                                          
                     
                 }catch(IOException e){
                     System.out.println(e + "Erro");
