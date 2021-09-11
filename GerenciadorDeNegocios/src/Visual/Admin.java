@@ -6,6 +6,8 @@
 package Visual;
 
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -100,7 +102,12 @@ public class Admin extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
       if(jTextField1.getText().equals("admin")&& jPasswordField1.getText().equals("admin")){
-       MenuPrincipal menu = new MenuPrincipal();
+       MenuPrincipal menu = null;
+          try {
+              menu = new MenuPrincipal();
+          } catch (Exception ex) {
+              Logger.getLogger(Admin.class.getName()).log(Level.SEVERE, null, ex);
+          }
        menu.setVisible(true);
        dispose();
       }else{

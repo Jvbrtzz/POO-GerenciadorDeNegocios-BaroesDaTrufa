@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 package Visual;
+import Estoque.ControleDeEstoque;
 import Modelos.Comida;
-//import Estoque.ControleDeEstoque;
 import Modelos.Bebida;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -13,6 +13,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import java.awt.BorderLayout;
 import java.awt.Image;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author jonat
@@ -40,19 +42,19 @@ public class MenuPrincipal extends javax.swing.JFrame {
      Bebida Refrigerante600 = new Bebida("06","Refrigerante 600ml", 8.00);
      Bebida SucoDaFruta = new Bebida("07","Suco da Fruta", 10.00);
      Bebida AguaMineral = new Bebida("08","Água Mineral", 3.00);
-     //ControleDeEstoque teste = new ControleDeEstoque();
+     ControleDeEstoque teste = new ControleDeEstoque();
     
   
      
     /**
      * Creates new form MenuPrincipal
      */
-    public MenuPrincipal() {
+    public MenuPrincipal() throws Exception {
         initComponents();
         
         
         
-        //teste.estoqueComida();
+        
         jqtdProduto1.setVisible(false);
         jqtdProduto2.setVisible(false);
         jqtdProduto3.setVisible(false);
@@ -551,6 +553,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
          Object temp = jqtdProduto1.getSelectedItem();
          Integer qtde = new Integer(temp.toString());
          total1 = qtde*StrogonoffdeFrango.getValor();
+         
+         try {
+             teste.controleEstoque(qtde, 1);
+         } catch (Exception ex) {
+             Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+         }
     }//GEN-LAST:event_jqtdProduto1ActionPerformed
 
     private void jqtdProduto2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jqtdProduto2ActionPerformed
@@ -631,7 +639,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuPrincipal().setVisible(true);
+                try {
+                    new MenuPrincipal().setVisible(true);
+                } catch (Exception ex) {
+                    Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
