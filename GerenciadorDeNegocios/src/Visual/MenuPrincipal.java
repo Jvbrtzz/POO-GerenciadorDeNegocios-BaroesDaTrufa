@@ -7,21 +7,20 @@ package Visual;
 import Estoque.ControleDeEstoque;
 import Modelos.Comida;
 import Modelos.Bebida;
+import java.io.FileNotFoundException;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import java.awt.BorderLayout;
-import java.awt.Image;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+
 /**
  *
  * @author jonat
  */
+import java.util.InputMismatchException;
 public class MenuPrincipal extends javax.swing.JFrame {
-     double cont;
-     int dec;
+     double cont;        
      double total1;
      double total2;
      double total3;
@@ -42,7 +41,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
      Bebida Refrigerante600 = new Bebida("06","Refrigerante 600ml", 8.00);
      Bebida SucoDaFruta = new Bebida("07","Suco da Fruta", 10.00);
      Bebida AguaMineral = new Bebida("08","Água Mineral", 3.00);
-     ControleDeEstoque teste = new ControleDeEstoque();
+     ControleDeEstoque cde = new ControleDeEstoque();
     
   
      
@@ -451,6 +450,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void jFerramentaFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFerramentaFinalizarActionPerformed
            
            ImageIcon logo = new ImageIcon("chef.png");
+           ImageIcon com = new ImageIcon("comanda.png");
            totalGeral = total1 + total2 + total3 + total4 + total5  + total6  + total7  + total8;
 //         System.out.println(total1);
 //         System.out.println(total2);
@@ -459,9 +459,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
 //         System.out.println(total5); 
 //         System.out.println(total6); 
 //         System.out.println(total7); 
-//         System.out.println(total8); 
-           JOptionPane.showMessageDialog(this,"RECIBO: \n  -----------------------------------------------  \n Strogonoff de Frango:" + total1 + "\n ----------------------------------------------- \n Strogonoff de Carne: " + total2 + " \n ----------------------------------------------- \n Strogonoff de Carne: " + total3 + " \n ----------------------------------------------- \n  Bife com fritas: " + total4 + "\n -----------------------------------------------\n Refrigerante Lata: " + total5 + "\n ----------------------------------------------- \n Refrigerante de 600ml: " + total6 + "\n ----------------------------------------------- \n Suco de Fruta: " + total7 + "\n ----------------------------------------------- \n Agua mineral: " + total8 + "\n ----------------------------------------------- \n TOTAL: " + totalGeral + "\n ----------------------------------------------- \n", "Comanda", HEIGHT, logo);
-
+//         System.out.println(total8);
+           
+          if(cde.isEstoqueDisponivel()){
+                JOptionPane.showMessageDialog(this,"RECIBO: \n  -----------------------------------------------  \n Strogonoff de Frango:" + total1 + "\n ----------------------------------------------- \n Strogonoff de Carne: " + total2 + " \n ----------------------------------------------- \n Strogonoff de Carne: " + total3 + " \n ----------------------------------------------- \n  Bife com fritas: " + total4 + "\n -----------------------------------------------\n Refrigerante Lata: " + total5 + "\n ----------------------------------------------- \n Refrigerante de 600ml: " + total6 + "\n ----------------------------------------------- \n Suco de Fruta: " + total7 + "\n ----------------------------------------------- \n Agua mineral: " + total8 + "\n ----------------------------------------------- \n TOTAL: " + totalGeral + "\n ----------------------------------------------- \n", "Comanda", HEIGHT, logo);
+           }else{
+                          
+                 JOptionPane.showMessageDialog(this, "Estoque Vazio!", "Comanda", HEIGHT, com);
+           }
         
                       
               
@@ -552,57 +557,195 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void jqtdProduto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jqtdProduto1ActionPerformed
          Object temp = jqtdProduto1.getSelectedItem();
          Integer qtde = new Integer(temp.toString());
-         total1 = qtde*StrogonoffdeFrango.getValor();
-         
-         try {
-             teste.controleEstoque(qtde, 1);
-         } catch (Exception ex) {
-             Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+         try{
+         cde.checaEstoque(qtde, 1);
+         }catch (Exception e){
+             Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, e);
          }
+         if(cde.isEstoqueDisponivel()){
+            try{ 
+                cde.controleEstoque(qtde, 1);
+            }catch(Exception ex) {
+                Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }  
+            try { 
+                total1 = cde.pegaValor(qtde,1);
+            }catch (Exception e){
+                
+                Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, e);
+         
+          }
+        } 
     }//GEN-LAST:event_jqtdProduto1ActionPerformed
 
     private void jqtdProduto2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jqtdProduto2ActionPerformed
         Object temp = jqtdProduto2.getSelectedItem();
              Integer qtde = new Integer(temp.toString());
-             
-             total2 = qtde*StrogonoffdeCarne.getValor();
+         try{
+         cde.checaEstoque(qtde, 2);
+         }catch (Exception e){
+             Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, e);
+         }
+         if(cde.isEstoqueDisponivel()){
+            try{ 
+                cde.controleEstoque(qtde, 2);
+            }catch(Exception ex) {
+                Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }  
+            try { 
+                total2 = cde.pegaValor(qtde,2);
+            }catch (Exception e){
+                
+                Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, e);
+         
+          }
+        } 
              
     }//GEN-LAST:event_jqtdProduto2ActionPerformed
 
     private void jqtdProduto3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jqtdProduto3ActionPerformed
         Object temp = jqtdProduto3.getSelectedItem();
              Integer qtde = new Integer(temp.toString());
-             total4 = qtde*CarneAssada.getValor();
+              try{
+         cde.checaEstoque(qtde, 3);
+         }catch (Exception e){
+             Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, e);
+         }
+         if(cde.isEstoqueDisponivel()){
+            try{ 
+                cde.controleEstoque(qtde, 3);
+            }catch(Exception ex) {
+                Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }  
+            try { 
+                total3 = cde.pegaValor(qtde,3);
+            }catch (Exception e){
+                
+                Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, e);
+         
+          }
+        } 
     }//GEN-LAST:event_jqtdProduto3ActionPerformed
 
     private void jqtdProduto4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jqtdProduto4ActionPerformed
         Object temp = jqtdProduto4.getSelectedItem();
              Integer qtde = new Integer(temp.toString());
-             total3 = qtde*BifeComFritas.getValor();
+              try{
+         cde.checaEstoque(qtde, 4);
+         }catch (Exception e){
+             Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, e);
+         }
+         if(cde.isEstoqueDisponivel()){
+            try{ 
+                cde.controleEstoque(qtde, 4);
+            }catch(Exception ex) {
+                Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }  
+            try { 
+                total4 = cde.pegaValor(qtde,4);
+            }catch (Exception e){
+                
+                Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, e);
+         
+          }
+        } 
     }//GEN-LAST:event_jqtdProduto4ActionPerformed
 
     private void jqtdProduto5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jqtdProduto5ActionPerformed
         Object temp = jqtdProduto5.getSelectedItem();
              Integer qtde = new Integer(temp.toString());
-             total5 = qtde*RefrigeranteLata.getValor();
+              try{
+         cde.checaEstoque(qtde, 5);
+         }catch (Exception e){
+             Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, e);
+         }
+         if(cde.isEstoqueDisponivel()){
+            try{ 
+                cde.controleEstoque(qtde, 5);
+            }catch(Exception ex) {
+                Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }  
+            try { 
+                total5 = cde.pegaValor(qtde,5);
+            }catch (Exception e){
+                
+                Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, e);
+         
+          }
+        } 
     }//GEN-LAST:event_jqtdProduto5ActionPerformed
 
     private void jqtdProduto6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jqtdProduto6ActionPerformed
          Object temp = jqtdProduto6.getSelectedItem();
              Integer qtde = new Integer(temp.toString());
-             total7 = qtde*Refrigerante600.getValor();
+             
+             try{
+            cde.checaEstoque(qtde, 6);
+            }catch (Exception e){
+             Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, e);
+         }
+         if(cde.isEstoqueDisponivel()){
+            try{ 
+                cde.controleEstoque(qtde, 6);
+            }catch(Exception ex) {
+                Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }  
+            try { 
+                total6 = cde.pegaValor(qtde,6);
+            }catch (Exception e){
+                
+                Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, e);
+         
+          }
+        } 
     }//GEN-LAST:event_jqtdProduto6ActionPerformed
 
     private void jqtdProduto7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jqtdProduto7ActionPerformed
         Object temp = jqtdProduto7.getSelectedItem();
              Integer qtde = new Integer(temp.toString());
-             total6 = qtde*SucoDaFruta.getValor();
+             try{
+         cde.checaEstoque(qtde, 7);
+         }catch (Exception e){
+             Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, e);
+         }
+         if(cde.isEstoqueDisponivel()){
+            try{ 
+                cde.controleEstoque(qtde, 7);
+            }catch(Exception ex) {
+                Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }  
+            try { 
+                total7 = cde.pegaValor(qtde,7);
+            }catch (Exception e){
+                
+                Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, e);
+         
+          }
+        } 
     }//GEN-LAST:event_jqtdProduto7ActionPerformed
 
     private void jqtdProduto8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jqtdProduto8ActionPerformed
         Object temp = jqtdProduto8.getSelectedItem();
              Integer qtde = new Integer(temp.toString());
-             total8 = qtde*AguaMineral.getValor();
+             try{
+         cde.checaEstoque(qtde, 8);
+         }catch (Exception e){
+             Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, e);
+         }
+         if(cde.isEstoqueDisponivel()){
+            try{ 
+                cde.controleEstoque(qtde, 8);
+            }catch(Exception ex) {
+                Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }  
+            try { 
+                total8 = cde.pegaValor(qtde,8);
+            }catch (Exception e){
+                
+                Logger.getLogger(MenuPrincipal.class.getName()).log(Level.SEVERE, null, e);
+         
+          }
+        } 
     }//GEN-LAST:event_jqtdProduto8ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

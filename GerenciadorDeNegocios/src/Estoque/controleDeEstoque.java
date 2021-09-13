@@ -11,29 +11,15 @@ package Estoque;
  */
  
 package Estoque;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import Modelos.*;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
-import java.util.Arrays;
-import java.lang.NullPointerException;
 import java.util.Scanner;
+import Visual.MenuPrincipal;
 
 
 /**
@@ -41,80 +27,26 @@ import java.util.Scanner;
  * @author oi
  */
 public class ControleDeEstoque{
-    
-    public static void estoqueComida(){
-        
-         
-//        try{ 
-//            FileInputStream arq = new FileInputStream("comidaEstoque.txt");
-//            InputStreamReader input = new InputStreamReader(arq);
-//            BufferedReader br = new BufferedReader(input);
-//            
-//            OutputStream fos = new FileOutputStream("comidaEstoque.txt");
-//            Writer esc = new OutputStreamWriter(fos); 
-//            BufferedWriter bw = new BufferedWriter(esc);
-//            
-//            String linha = null;
-//            
-//            do{
-//                try{
-//                    linha = br.readLine();
-//                    String[] dado = linha.split(";");                    
-//                        int cont = 0;
-//                        String temp2 = null;
-//                        System.out.println(linha);
-//                        for(int i = 0; i < dado.length; i+=4){                            
-//                            if(dado[i] == "3"){
-//                              int temp = Integer.parseInt(dado[i+3]);
-//                              temp -= 5;
-//                              temp2 = Integer.toString(temp);
-//                              
-//                            }
-//                            
-//                        }                                       
-//                        
-//                        for(int i = 0; i < dado.length; i+=4){
-//                            if(dado[i] == "3"){
-//                                String temp3 = dado[i] + " ; " + dado[i+1] + " ; " + dado[i+2] + " ; " + dado[i+3];
-//                                bw.write(temp3);
-//                                bw.newLine();
-//                                
-//                            }else{
-//                                String temp3 = dado[i] + " ; " + dado[i+1] + " ; " + dado[i+2] + " ; " + temp2;
-//                                bw.write(temp3);                                 
-//                                bw.newLine();
-//                                
-//                                
-//                            }
-//                            bw.flush();
-//                        }
-//                        
-//                        bw.close();
-//                        String linha2 = br.readLine();              
-//                        System.out.println(linha2);
-//                
-//                }catch(IOException e){
-//                    System.out.println(e + "Erro");
-//                }
-//            
-//            
-//            }while(linha != null);            
-//        
-//            
-//        }catch(FileNotFoundException e){    
-//            System.out.println(e + "Arquivo não encontrado");
-//        }
+   
+    private boolean estoqueDisponivel;
+
+     public boolean isEstoqueDisponivel() {
+        return estoqueDisponivel;
     }
-    
-public static void controleEstoque(int val, int cd)throws Exception, FileNotFoundException{
+
+    public void setEstoqueDisponivel(boolean estoqueDisponivel) {
+        this.estoqueDisponivel = estoqueDisponivel;
+    } 
+   
+    public void controleEstoque(int val, int cd)throws Exception, FileNotFoundException{
          Scanner scanner = new Scanner(new File("teste.txt"));
          OutputStream fos = new FileOutputStream("comidaEstoque.txt");
          Writer esc = new OutputStreamWriter(fos); 
-         BufferedWriter bw = new BufferedWriter(esc);
+         BufferedWriter bw = new BufferedWriter(esc);         
+         MenuPrincipal Disponivel = new MenuPrincipal();
+        
                 while(scanner.hasNextLine()) {
-                        String linha = scanner.nextLine();
-                        
-
+                        String linha = scanner.nextLine();                       
                         Scanner linhaScanner = new Scanner(linha);
                         
                         linhaScanner.useDelimiter(";");
@@ -123,21 +55,25 @@ public static void controleEstoque(int val, int cd)throws Exception, FileNotFoun
                         String nome = linhaScanner.next();
                         int valor= linhaScanner.nextInt();
                         int estoque = linhaScanner.nextInt();
-                                                
+                         
                         if(cod == cd){
-                           estoque -= val;
-                       }
-                       
+                            estoque -= val;
+                            if(val > estoque){
+                                estoque = 0; 
+                            }    
+                        }
+                        
+                                                
                         String result = String.format("%s;%s;%s;%s", cod, nome, valor, estoque);
-                        System.out.println(result);
+
                         bw.write(result);
                         bw.newLine();
                         bw.flush();
-                        
-                       
-                       
-
                 }
+                       
+ 
+
+                
                 bw.close();
                 scanner.close();
                 Scanner scanner1 = new Scanner(new File("comidaEstoque.txt"));
@@ -159,7 +95,7 @@ public static void controleEstoque(int val, int cd)throws Exception, FileNotFoun
                       
                        
                         String result1 = String.format("%s;%s;%s;%s", cod, nome, valor, estoque);
-                        System.out.println(result1);
+                  
                         bw1.write(result1);
                         bw1.newLine();
                         bw1.flush();
@@ -171,10 +107,37 @@ public static void controleEstoque(int val, int cd)throws Exception, FileNotFoun
                 bw1.close();
                 scanner1.close();
     
-    }
-public static int pegaValor(int cd){
-        Scanner ler = new Scanner("comidaEstoque.txt");
-        int preco = 0;
+}
+    public double pegaValor(int qtde, int cd) throws Exception, FileNotFoundException{
+        Scanner ler = new Scanner(new File("comidaEstoque.txt"));        
+        double total = 0.0;
+        while(ler.hasNextLine()) {
+                        String linha = ler.nextLine();
+                        
+
+                        Scanner linhaScanner = new Scanner(linha);
+                        
+                        linhaScanner.useDelimiter(";");
+
+                        int cod = linhaScanner.nextInt();
+                        String nome = linhaScanner.next();
+                        double valor= linhaScanner.nextDouble();
+                        int estoque = linhaScanner.nextInt();
+                        
+                        if(cod == cd){
+                          total = qtde*valor;
+                           
+                            }
+                        
+        }
+        System.out.println(total);
+        ler.close();
+        return total;
+    }   
+    public boolean checaEstoque(int qtde, int cd) throws Exception{
+        Scanner ler = new Scanner(new File("comidaEstoque.txt"));
+        MenuPrincipal Disponivel = new MenuPrincipal();
+        
         while(ler.hasNextLine()) {
                         String linha = ler.nextLine();
                         
@@ -189,12 +152,21 @@ public static int pegaValor(int cd){
                         int estoque = linhaScanner.nextInt();
                         
                         if(cod == cd){
-                            preco = valor;
+                            if(estoque < qtde){
+                                this.setEstoqueDisponivel(false);
                             
+                            }else{
+                                 this.setEstoqueDisponivel(true);
+                            }
+                              
+                                   
                         }
+                            
         }
-        ler.close();
-        return preco;
-    }   
-    
-}
+        
+        
+        return true;
+        }
+        
+}        
+        
