@@ -452,14 +452,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
            ImageIcon logo = new ImageIcon("chef.png");
            ImageIcon com = new ImageIcon("comanda.png");
            totalGeral = total1 + total2 + total3 + total4 + total5  + total6  + total7  + total8;
-//         System.out.println(total1);
-//         System.out.println(total2);
-//         System.out.println(total3); 
-//         System.out.println(total4);  
-//         System.out.println(total5); 
-//         System.out.println(total6); 
-//         System.out.println(total7); 
-//         System.out.println(total8);
+
            
           if(cde.isEstoqueDisponivel()){
                 JOptionPane.showMessageDialog(this,"RECIBO: \n  -----------------------------------------------  \n Strogonoff de Frango:" + total1 + "\n ----------------------------------------------- \n Strogonoff de Carne: " + total2 + " \n ----------------------------------------------- \n Strogonoff de Carne: " + total3 + " \n ----------------------------------------------- \n  Bife com fritas: " + total4 + "\n -----------------------------------------------\n Refrigerante Lata: " + total5 + "\n ----------------------------------------------- \n Refrigerante de 600ml: " + total6 + "\n ----------------------------------------------- \n Suco de Fruta: " + total7 + "\n ----------------------------------------------- \n Agua mineral: " + total8 + "\n ----------------------------------------------- \n TOTAL: " + totalGeral + "\n ----------------------------------------------- \n", "Comanda", HEIGHT, logo);
