@@ -10,7 +10,7 @@ package Estoque;
  * @author jvbor
  */
  
-package Estoque;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
