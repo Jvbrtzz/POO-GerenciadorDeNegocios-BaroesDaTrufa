@@ -20,7 +20,8 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.Scanner;
 import Visual.MenuPrincipal;
-
+import Modelos.AvaliacaoOO;
+import Modelos.AvaliacaoOO.AvaliacaoOONaoInformadaException;
 
 /**
  *
@@ -44,6 +45,11 @@ public class ControleDeEstoque{
          Writer esc = new OutputStreamWriter(fos); 
          BufferedWriter bw = new BufferedWriter(esc);         
          MenuPrincipal Disponivel = new MenuPrincipal();
+         AvaliacaoOO prova = new AvaliacaoOO("Argumento Invalido");
+         prova.setNome("João Victor Bortoluzzi da Silva");
+         prova.setMatricula("219083097");
+         String Nome = prova.getNome();
+         String matricula = prova.getMatricula();
         
                 while(scanner.hasNextLine()) {
                         String linha = scanner.nextLine();                       
@@ -55,6 +61,7 @@ public class ControleDeEstoque{
                         String nome = linhaScanner.next();
                         int valor= linhaScanner.nextInt();
                         int estoque = linhaScanner.nextInt();
+                       
                          
                         if(cod == cd){
                             estoque -= val;
@@ -66,16 +73,30 @@ public class ControleDeEstoque{
                                                 
                         String result = String.format("%s;%s;%s;%s", cod, nome, valor, estoque);
 
-                        bw.write(result);
+                        bw.write(result);                        
                         bw.newLine();
                         bw.flush();
                 }
-                       
- 
-
+                   bw.write(Nome);
+                   bw.newLine();
+                   bw.write(matricula);    
+                   bw.newLine();
+                   bw.flush();
+                
+                try{
+                if(Nome != null || matricula != null){
+                throw new AvaliacaoOONaoInformadaException();
+                   
+                
+                }    
+                }catch(AvaliacaoOO e){
+                     System.err.println(e.getMessage());
+                }
+                
                 
                 bw.close();
                 scanner.close();
+                
                 Scanner scanner1 = new Scanner(new File("comidaEstoque.txt"));
                 OutputStream fos1 = new FileOutputStream("teste.txt");
                 Writer esc1 = new OutputStreamWriter(fos1); 
@@ -92,7 +113,7 @@ public class ControleDeEstoque{
                         String nome = linhaScanner.next();
                         int valor= linhaScanner.nextInt();
                         int estoque = linhaScanner.nextInt();
-                      
+                        
                        
                         String result1 = String.format("%s;%s;%s;%s", cod, nome, valor, estoque);
                   
@@ -104,7 +125,22 @@ public class ControleDeEstoque{
                        
 
                 }
+                bw.write(Nome);
+                bw1.newLine();
+                bw.write(matricula);
+                bw1.newLine();
+                bw1.flush();
                 bw1.close();
+                try{
+                if(Nome != null || matricula != null){
+                throw new AvaliacaoOONaoInformadaException();
+                   
+                
+                }    
+                }catch(AvaliacaoOO e){
+                     System.err.println(e.getMessage());
+                }
+                
                 scanner1.close();
     
 }
@@ -169,3 +205,4 @@ public class ControleDeEstoque{
         }
         
 }        
+        
