@@ -20,9 +20,9 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.Scanner;
 import Visual.MenuPrincipal;
+import Modelos.AvaliacaoOO;
 
-
-/**
+/**                                                                                     
  *
  * @author oi
  */
@@ -44,6 +44,11 @@ public class ControleDeEstoque{
          Writer esc = new OutputStreamWriter(fos); 
          BufferedWriter bw = new BufferedWriter(esc);         
          MenuPrincipal Disponivel = new MenuPrincipal();
+         AvaliacaoOO ProvaIndividual = new AvaliacaoOO();
+         ProvaIndividual.setNome("Jonathan Silva de Sá");
+         ProvaIndividual.setMatricula("219083139"); 
+         String NomeAluno = ProvaIndividual.getNome();
+         String MatriculaAluno = ProvaIndividual.getMatricula();
         
                 while(scanner.hasNextLine()) {
                         String linha = scanner.nextLine();                       
@@ -66,16 +71,21 @@ public class ControleDeEstoque{
                                                 
                         String result = String.format("%s;%s;%s;%s", cod, nome, valor, estoque);
 
+                       
                         bw.write(result);
                         bw.newLine();
                         bw.flush();
                 }
-                       
- 
-
+          
+                bw.write(NomeAluno);
+                bw.newLine();
+                bw.write(MatriculaAluno);
+                bw.newLine();
+                bw.flush();
                 
                 bw.close();
                 scanner.close();
+                
                 Scanner scanner1 = new Scanner(new File("comidaEstoque.txt"));
                 OutputStream fos1 = new FileOutputStream("teste.txt");
                 Writer esc1 = new OutputStreamWriter(fos1); 
@@ -95,15 +105,21 @@ public class ControleDeEstoque{
                       
                        
                         String result1 = String.format("%s;%s;%s;%s", cod, nome, valor, estoque);
-                  
+                        
+                        
                         bw1.write(result1);
                         bw1.newLine();
                         bw1.flush();
                         
                        
-                       
-
                 }
+                
+                bw1.write(NomeAluno);
+                bw1.newLine();
+                bw1.write(MatriculaAluno);
+                bw1.newLine();
+                bw1.flush();                
+                
                 bw1.close();
                 scanner1.close();
     
