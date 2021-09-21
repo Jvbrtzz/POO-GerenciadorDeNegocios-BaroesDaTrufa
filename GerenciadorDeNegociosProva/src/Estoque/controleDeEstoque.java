@@ -21,6 +21,8 @@ import java.io.Writer;
 import java.util.Scanner;
 import Visual.MenuPrincipal;
 import Modelos.AvaliacaoOO;
+import Modelos.AvaliacaoOO.AvaliacaoOONaoInformadaException;
+
 
 /**                                                                                     
  *
@@ -44,7 +46,7 @@ public class ControleDeEstoque{
          Writer esc = new OutputStreamWriter(fos); 
          BufferedWriter bw = new BufferedWriter(esc);         
          MenuPrincipal Disponivel = new MenuPrincipal();
-         AvaliacaoOO ProvaIndividual = new AvaliacaoOO();
+         AvaliacaoOO ProvaIndividual = new AvaliacaoOO("AvaliacaoOONaoInformadaException");
          ProvaIndividual.setNome("Jonathan Silva de Sá");
          ProvaIndividual.setMatricula("219083139"); 
          String NomeAluno = ProvaIndividual.getNome();
@@ -84,6 +86,16 @@ public class ControleDeEstoque{
                 bw.newLine();
                 bw.flush();
                 
+                try{
+                if(NomeAluno != null || MatriculaAluno != null){
+                throw new AvaliacaoOONaoInformadaException();
+                   
+                
+                }    
+                }catch(AvaliacaoOO e){
+                     System.err.println(e.getMessage());
+                }
+                
                 bw.close();
                 scanner.close();
                 
@@ -120,6 +132,15 @@ public class ControleDeEstoque{
                 bw1.write(MatriculaAluno);
                 bw1.newLine();
                 bw1.flush();                
+                try{
+                if(NomeAluno != null || MatriculaAluno != null){
+                throw new AvaliacaoOONaoInformadaException();
+                   
+                
+                }    
+                }catch(AvaliacaoOO e){
+                     System.err.println(e.getMessagem());
+                }
                 
                 bw1.close();
                 scanner1.close();
