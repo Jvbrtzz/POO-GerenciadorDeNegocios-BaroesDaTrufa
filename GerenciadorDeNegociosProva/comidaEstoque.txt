@@ -1,10 +1,10 @@
-1;StrogonoffDeFrango;22;2
-2;StrogonoffDeCarne;25;8
+1;StrogonoffDeFrango;22;6
+2;StrogonoffDeCarne;25;10
 3;CarneAssada;27;10
 4;BifeComFritas;25;10
 5;RefrigeranteLata;5;10
 6;Refrigerante600ml;8;10
 7;SuceDeFruta;10;10
-8;AguaMineral;3;10
-João Victor Bortoluzzi da Silva
-219083097
+8;AguaMineral;3;0
+Jonathan Silva de Sá
+219083139

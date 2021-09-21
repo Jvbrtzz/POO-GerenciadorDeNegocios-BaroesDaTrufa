@@ -49,6 +49,7 @@ public class ControleDeEstoque{
          ProvaIndividual.setMatricula("219083139"); 
          String NomeAluno = ProvaIndividual.getNome();
          String MatriculaAluno = ProvaIndividual.getMatricula();
+         
         
                 while(scanner.hasNextLine()) {
                         String linha = scanner.nextLine();                       
